@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
-import { pageMetadata } from "@/lib/metadata";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./CreateNote.module.css";
-export const metadata: Metadata = pageMetadata(
-  "Create note | NoteHub",
-  "Create a new personal note. Your unfinished draft is saved automatically.",
-  "/notes/action/create",
-);
+
+export const metadata: Metadata = {
+  title: "Create note | NoteHub",
+  description:
+    "Create a new personal note. Your unfinished draft is saved automatically.",
+  openGraph: {
+    title: "Create note | NoteHub",
+    description:
+      "Create a new personal note. Your unfinished draft is saved automatically.",
+    url: "https://08-zustand-nine-gold.vercel.app/notes/action/create",
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub — manage your personal notes",
+      },
+    ],
+  },
+};
+
 export default function CreateNote() {
   return (
     <main className={css.main}>
