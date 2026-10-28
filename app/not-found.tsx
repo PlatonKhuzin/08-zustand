@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
+export const metadata: Metadata = {
+  ...pageMetadata(
+    "404 - Page not found | NoteHub",
+    "Sorry, the page you are looking for does not exist.",
+    "/404",
+  ),
+  robots: { index: false, follow: false },
+};
+import css from "./NotFound.module.css";
+export default function NotFound() {
+  return (
+    <main className={css.main}>
+      <h1 className={css.title}>404 - Page not found</h1>
+      <p className={css.description}>
+        Sorry, the page you are looking for does not exist.
+      </p>
+    </main>
+  );
+}
